@@ -314,16 +314,191 @@
         .section:nth-child(2) { animation-delay: 0.2s; }
         .section:nth-child(3) { animation-delay: 0.4s; }
         .section:nth-child(4) { animation-delay: 0.6s; }
+
+        .testimonials {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin: 1rem 0;
+            color: #333;
+        }
+        
+        .testimonial-card cite {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Кейсы */
+        .case-studies {
+            padding: 4rem 0;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #0066cc;
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .case-card h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+        
+        .case-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .case-card li {
+            padding: 0.5rem 0;
+            color: #333;
+        }
+        
+        .case-card li:before {
+            content: "✓";
+            color: #0066cc;
+            margin-right: 0.5rem;
+        }
+
+        .telegram-blog {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .telegram-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .telegram-preview {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .telegram-preview img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .telegram-stats {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .telegram-description {
+            padding: 2rem;
+        }
+        
+        .telegram-description ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .telegram-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #0088cc;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .telegram-button:hover {
+            background: #006699;
+        }
+        
+        @media (max-width: 768px) {
+            .telegram-content {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+    <!-- Yandex.Metrika counter -->
+    <script>
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(XXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-XXXXX-Y', 'auto');
+      ga('send', 'pageview');
+    </script>
 </head>
 <body>
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Alex Go",
+        "@type": "ProfessionalService",
+        "name": "Алекс Гоу - IT ментор",
         "jobTitle": "Senior Go/Python Developer",
-        "description": "Senior разработчик и технический ментор, специализирующийся на Go и Python",
+        "description": "Обучение Go, Python и автоматизации тестирования",
         "knowsAbout": ["Go", "Python", "Backend Development", "Microservices", "Software Architecture"],
         "url": "https://atitov96.github.io/atitov96/"
     }
@@ -332,9 +507,16 @@
     <div class="hero">
         <div class="container">
             <h1>Алекс Гоу</h1>
+            <!-- Вариант A -->
+            <!-- <h1>Стань Go/Python разработчиком с опытным ментором</h1> -->
+            <!-- Вариант B -->
+            <!-- <h1>Увеличь свой доход в IT с персональным наставником</h1> -->
             <p>Senior Go/Python Developer & Technical Mentor</p>
             <a href="https://t.me/alexgolang" class="cta-button" target="_blank" rel="noopener">
-                Записаться на консультацию
+                <!-- Вариант A -->
+                <!-- Записаться на консультацию -->
+                <!-- Вариант B -->
+                Получить персональный план развития
             </a>
         </div>
     </div>
@@ -402,6 +584,97 @@
                     </ul>
                 </div>
             </section>
+
+        <!-- <section class="blog-section">
+              <h2>Блог</h2>
+              <div class="blog-grid">
+                <article class="blog-card">
+                  <h3>Микросервисы на Go: практический опыт</h3>
+                  <p>Разбор реального проекта: архитектура, проблемы, решения...</p>
+                  <a href="/blog/microservices-go">Читать далее</a>
+                </article>
+                
+                <article class="blog-card">
+                  <h3>Автоматизация тестирования на Python</h3>
+                  <p>Построение эффективного фреймворка для тестирования...</p>
+                  <a href="/blog/python-testing">Читать далее</a>
+                </article>
+              </div>
+            </section> -->
+        <!-- <section class="testimonials">
+              <h2>Отзывы студентов</h2>
+              <div class="testimonials-slider">
+                <div class="testimonial-card">
+                  <img src="avatar1.jpg" alt="Михаил К.">
+                  <blockquote>
+                    "За 6 месяцев менторства прошёл путь от джуна до мидла в Go. Очень структурированная программа и постоянная поддержка."
+                  </blockquote>
+                  <cite>Михаил К., Go Developer в Яндекс</cite>
+                </div>
+                
+                <div class="testimonial-card">
+                  <img src="avatar2.jpg" alt="Анна С.">
+                  <blockquote>
+                    "Благодаря Алексу успешно прошла собеседование в крупную компанию. Особенно помогли мок-интервью и разбор алгоритмических задач."
+                  </blockquote>
+                  <cite>Анна С., Python Developer в Озон</cite>
+                </div>
+              </div>
+            </section> -->
+
+        <!-- <section class="case-studies">
+              <h2>Успешные кейсы</h2>
+              <div class="case-grid">
+                <div class="case-card">
+                  <h3>Переход с PHP на Go</h3>
+                  <ul>
+                    <li>Начальный уровень: PHP Middle Developer</li>
+                    <li>Длительность обучения: 4 месяца</li>
+                    <li>Результат: Go Developer в финтех-стартапе</li>
+                    <li>Рост зарплаты: +80%</li>
+                  </ul>
+                </div>
+                
+                <div class="case-card">
+                  <h3>С нуля до автоматизации тестирования</h3>
+                  <ul>
+                    <li>Начальный уровень: Ручной QA</li>
+                    <li>Длительность обучения: 6 месяцев</li>
+                    <li>Результат: AQA Engineer в продуктовой компании</li>
+                    <li>Рост зарплаты: +65%</li>
+                  </ul>
+                </div>
+              </div>
+            </section> -->
+
+        <!-- <section class="telegram-blog">
+                <div class="container">
+                    <h2>Мой Telegram канал</h2>
+                    <div class="telegram-content">
+                        <div class="telegram-preview">
+                            <img src="/images/telegram-preview.jpg" alt="Telegram канал">
+                            <div class="telegram-stats">
+                                <span>1200+ подписчиков</span>
+                                <span>•</span>
+                                <span>3 поста в неделю</span>
+                            </div>
+                        </div>
+                        <div class="telegram-description">
+                            <h3>О чем пишу:</h3>
+                            <ul>
+                                <li>Разборы интересных задач на Go и Python</li>
+                                <li>Архитектурные решения из реальных проектов</li>
+                                <li>Подготовка к собеседованиям</li>
+                                <li>Новости и тренды в backend-разработке</li>
+                            </ul>
+                            <a href="https://t.me/your_channel" class="telegram-button" target="_blank">
+                                <svg>/* Иконка Telegram */</svg>
+                                Подписаться на канал
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
         </div>
     </main>
 
