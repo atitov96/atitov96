@@ -11,15 +11,20 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://atitov96.github.io/atitov96/">
     <title>Алекс Гоу | Senior Go/Python Developer & Technical Mentor</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
     <style>
         :root {
-            --primary: #61dafb;
-            --bg-dark: #0a192f;
-            --text-main: #2c3e50;
-            --text-light: #718096;
-            --gradient-primary: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --bg-dark: #0f172a;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
         }
 
@@ -33,22 +38,23 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            background: #f8f9fa;
+            background: #f8fafc;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .hero {
-            background: var(--gradient-primary);
+            background: var(--bg-dark);
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             position: relative;
             margin-bottom: 40px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         .hero::before {
@@ -58,52 +64,90 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, #61dafb22 25%, transparent 25%) -40px 0,
-                        linear-gradient(-45deg, #61dafb22 25%, transparent 25%) -40px 0;
-            background-size: 60px 60px;
-            opacity: 0.1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
         }
 
         .hero h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            color: var(--primary);
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             position: relative;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
         .section {
             background: white;
-            margin: 20px 0;
-            padding: 30px;
-            border-radius: 12px;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 16px;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
         }
 
         .section:hover {
             box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
         }
 
         h2 {
             color: var(--bg-dark);
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #edf2f7;
+            font-size: 2em;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
         }
 
         .feature-card {
-            background: #f7fafc;
-            padding: 20px;
-            margin: 15px 0;
-            border-left: 4px solid var(--primary);
-            border-radius: 0 8px 8px 0;
+            background: #f8fafc;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         .feature-list {
@@ -111,8 +155,8 @@
         }
 
         .feature-list li {
-            margin: 15px 0;
-            padding-left: 25px;
+            margin: 20px 0;
+            padding-left: 30px;
             position: relative;
         }
 
@@ -121,56 +165,83 @@
             position: absolute;
             left: 0;
             color: var(--primary);
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, rgba(97, 218, 251, 0.2) 0%, rgba(97, 218, 251, 0.1) 100%);
-            padding: 2px 5px;
-            border-radius: 3px;
+            font-weight: bold;
         }
 
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
         }
 
         .expertise-item {
             background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .contact {
-            background: var(--bg-dark);
-            color: white;
-            padding: 40px;
-            text-align: center;
+            padding: 30px;
             border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .contact a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
+            border: 1px solid #e2e8f0;
             transition: var(--transition);
         }
 
-        .contact a:hover {
-            opacity: 0.8;
+        .expertise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .expertise-item h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-section {
+            background: var(--bg-dark);
+            color: white;
+            padding: 80px 0;
+            margin-top: 60px;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-button svg {
+            margin-right: 10px;
         }
 
         .quote {
             font-style: italic;
             color: var(--text-light);
-            border-left: 3px solid var(--primary);
+            border-left: 4px solid var(--primary);
             padding: 20px;
-            margin: 20px 0;
+            margin: 30px 0;
             background: #f8fafc;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.1em;
         }
 
         @media (max-width: 768px) {
@@ -179,17 +250,34 @@
             }
 
             .hero h1 {
-                font-size: 2.2em;
+                font-size: 2.5em;
             }
 
             .section {
-                padding: 20px;
+                padding: 30px 20px;
             }
 
             .expertise-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-section {
+                padding: 60px 20px;
+            }
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -210,6 +298,7 @@
         <div class="container">
             <h1>Алекс Гоу</h1>
             <p>Senior Go/Python Developer & Technical Mentor</p>
+            <a href="https://t.me/alexgolang" class="cta-button">Записаться на консультацию</a>
         </div>
     </div>
 
@@ -276,11 +365,19 @@
             </div>
         </section>
 
-        <div class="contact">
-            <h2>Связаться со мной</h2>
-            <p>Для обсуждения деталей сотрудничества и записи на консультацию пишите в Telegram</p>
-            <p><a href="https://t.me/alexgolang">@alexgolang</a></p>
-        </div>
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2>Начать обучение</h2>
+                <p>Готовы начать свой путь к успешной карьере в IT?</p>
+                <a href="https://t.me/alexgolang" class="contact-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2647 2.42778C21.98 2.19091 21.6364 2.03567 21.2704 1.97858C20.9045 1.92149 20.5299 1.96469 20.1867 2.10406L2.26668 9.33184C1.88183 9.49147 1.55392 9.76114 1.32277 10.1089C1.09162 10.4566 0.967954 10.8667 0.967954 11.2868C0.967954 11.7069 1.09162 12.117 1.32277 12.4647C1.55392 12.8124 1.88183 13.0821 2.26668 13.2417L6.47645 14.9447L8.52129 20.6542C8.56115 20.7747 8.63039 20.8817 8.72203 20.965C8.81367 21.0483 8.92427 21.105 9.04379 21.1298C9.16331 21.1546 9.28786 21.1467 9.40375 21.1068C9.51964 21.0669 9.62297 20.9964 9.70507 20.9017L12.4267 17.8017L16.9567 21.4737C17.3058 21.7646 17.7453 21.9279 18.2001 21.9358C18.6548 21.9437 19.0997 21.7957 19.4584 21.517C19.817 21.2384 20.0694 20.8447 20.1757 20.4005C20.282 19.9563 20.2362 19.4897 20.0457 19.0747L22.8947 3.41981C22.9861 3.06502 22.9767 2.69284 22.8674 2.34296C22.7582 1.99309 22.5536 1.68059 22.2747 1.44073L22.2647 2.42778ZM18.1667 21.0177C17.9943 21.0185 17.8258 20.9644 17.6867 20.8637L12.6567 16.7857L10.9867 18.7157L11.5867 14.9357L18.9067 8.05173L8.86672 13.6037L4.36672 11.7777L22.2867 4.54973L18.1667 21.0177Z" fill="white"/>
+                    </svg>
+                    Написать в Telegram
+                </a>
+                <p style="margin-top: 20px; opacity: 0.8;">@alexgolang</p>
+            </div>
+        </section>
     </div>
 </body>
 </html>
