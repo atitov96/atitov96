@@ -39,21 +39,28 @@
             line-height: 1.6;
             color: var(--text-main);
             background: #f8fafc;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
         }
 
         .hero {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
             background: var(--bg-dark);
             color: white;
             padding: 100px 20px;
             text-align: center;
-            position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
@@ -86,7 +93,9 @@
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: var(--primary);
             color: white;
             padding: 15px 40px;
@@ -98,7 +107,6 @@
             box-shadow: var(--shadow-md);
             width: auto;
             cursor: pointer;
-            text-align: center;
         }
 
         .cta-button:hover {
@@ -107,14 +115,19 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .cta-button:active, .contact-button:active {
+        .cta-button:active, 
+        .contact-button:active {
             transform: translateY(1px);
             box-shadow: var(--shadow-sm);
         }
 
+        .main-content {
+            margin-bottom: 60px;
+        }
+
         .section {
             background: white;
-            margin: 30px 0;
+            margin: 40px 0;
             padding: 40px;
             border-radius: 16px;
             box-shadow: var(--shadow-sm);
@@ -203,24 +216,29 @@
         }
 
         .contact-section {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
             background: var(--bg-dark);
             color: white;
             padding: 80px 0;
-            margin-top: 60px;
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-            width: 100%;
-            margin: 0;
         }
 
         .contact-container {
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .contact-button {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             background: var(--primary);
             color: white;
             padding: 20px 40px;
@@ -231,6 +249,8 @@
             margin-top: 30px;
             transition: var(--transition);
             box-shadow: var(--shadow-md);
+            width: auto;
+            cursor: pointer;
         }
 
         .contact-button:hover {
@@ -241,6 +261,7 @@
 
         .contact-button svg {
             margin-right: 10px;
+            flex-shrink: 0;
         }
 
         .quote {
@@ -260,7 +281,7 @@
             }
 
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
             }
 
             .section {
@@ -273,6 +294,11 @@
 
             .contact-section {
                 padding: 60px 20px;
+            }
+
+            .contact-button {
+                padding: 15px 30px;
+                font-size: 1.1em;
             }
         }
 
@@ -291,7 +317,6 @@
     </style>
 </head>
 <body>
-    <!-- Schema.org микроразметка -->
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
@@ -308,86 +333,90 @@
         <div class="container">
             <h1>Алекс Гоу</h1>
             <p>Senior Go/Python Developer & Technical Mentor</p>
-            <a href="https://t.me/alexgolang" class="cta-button">Записаться на консультацию</a>
+            <a href="https://t.me/alexgolang" class="cta-button" target="_blank" rel="noopener">
+                Записаться на консультацию
+            </a>
         </div>
     </div>
 
-    <div class="container">
-        <section class="section">
-            <h2>О себе</h2>
-            <p>Senior разработчик с глубоким пониманием высоконагруженных систем и микросервисной архитектуры. Специализируюсь на:</p>
-            <div class="feature-card">
-                <ul class="feature-list">
-                    <li>Backend-разработке на Go и Python</li>
-                    <li>Автоматизации тестирования (Python AQA)</li>
-                    <li>Проектировании высоконагруженных микросервисов</li>
-                    <li>Менторстве и подготовке к техническим собеседованиям</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Индивидуальный подход</h2>
-            <div class="quote">
-                "В IT нет универсальных решений - каждый специалист уникален и требует персонального пути развития"
-            </div>
-            <div class="feature-card">
-                <ul class="feature-list">
-                    <li>Разработка персонального плана развития под ваши цели</li>
-                    <li>Работа с реальными проектами и актуальными технологиями</li>
-                    <li>Постоянная обратная связь и поддержка</li>
-                    <li>Фокус на практических навыках, востребованных в индустрии</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Области экспертизы</h2>
-            <div class="expertise-grid">
-                <div class="expertise-item">
-                    <h3>Go</h3>
-                    <p>Микросервисная архитектура, высокие нагрузки, конкурентное программирование</p>
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <h2>О себе</h2>
+                <p>Senior разработчик с глубоким пониманием высоконагруженных систем и микросервисной архитектуры. Специализируюсь на:</p>
+                <div class="feature-card">
+                    <ul class="feature-list">
+                        <li>Backend-разработке на Go и Python</li>
+                        <li>Автоматизации тестирования (Python AQA)</li>
+                        <li>Проектировании высоконагруженных микросервисов</li>
+                        <li>Менторстве и подготовке к техническим собеседованиям</li>
+                    </ul>
                 </div>
-                <div class="expertise-item">
-                    <h3>Python</h3>
-                    <p>Backend-разработка, автоматизация тестирования (AQA), API</p>
-                </div>
-                <div class="expertise-item">
-                    <h3>Архитектура</h3>
-                    <p>Проектирование систем, масштабирование, отказоустойчивость</p>
-                </div>
-                <div class="expertise-item">
-                    <h3>DevOps</h3>
-                    <p>CI/CD, контейнеризация, мониторинг производительности</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section">
-            <h2>Форматы работы</h2>
-            <div class="feature-card">
-                <ul class="feature-list">
-                    <li><strong>Персональные консультации:</strong> Разбор конкретных вопросов и проблем</li>
-                    <li><strong>Код-ревью:</strong> Анализ проектов и рекомендации по улучшению</li>
-                    <li><strong>Менторство:</strong> Долгосрочное сопровождение с постановкой целей</li>
-                    <li><strong>Мок-интервью:</strong> Подготовка к техническим собеседованиям</li>
-                </ul>
-            </div>
-        </section>
+            <section class="section">
+                <h2>Индивидуальный подход</h2>
+                <div class="quote">
+                    "В IT нет универсальных решений - каждый специалист уникален и требует персонального пути развития"
+                </div>
+                <div class="feature-card">
+                    <ul class="feature-list">
+                        <li>Разработка персонального плана развития под ваши цели</li>
+                        <li>Работа с реальными проектами и актуальными технологиями</li>
+                        <li>Постоянная обратная связь и поддержка</li>
+                        <li>Фокус на практических навыках, востребованных в индустрии</li>
+                    </ul>
+                </div>
+            </section>
 
-        <section class="contact-section">
+            <section class="section">
+                <h2>Области экспертизы</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>Go</h3>
+                        <p>Микросервисная архитектура, высокие нагрузки, конкурентное программирование</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Python</h3>
+                        <p>Backend-разработка, автоматизация тестирования (AQA), API</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Архитектура</h3>
+                        <p>Проектирование систем, масштабирование, отказоустойчивость</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>DevOps</h3>
+                        <p>CI/CD, контейнеризация, мониторинг производительности</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Форматы работы</h2>
+                <div class="feature-card">
+                    <ul class="feature-list">
+                        <li><strong>Персональные консультации:</strong> Разбор конкретных вопросов и проблем</li>
+                        <li><strong>Код-ревью:</strong> Анализ проектов и рекомендации по улучшению</li>
+                        <li><strong>Менторство:</strong> Долгосрочное сопровождение с постановкой целей</li>
+                        <li><strong>Мок-интервью:</strong> Подготовка к техническим собеседованиям</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="contact-section">
             <div class="contact-container">
-                <h2>Начать обучение</h2>
-                <p>Готовы начать свой путь к успешной карьере в IT?</p>
-                <a href="https://t.me/alexgolang" class="contact-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.2647 2.42778C21.98 2.19091 21.6364 2.03567 21.2704 1.97858C20.9045 1.92149 20.5299 1.96469 20.1867 2.10406L2.26668 9.33184C1.88183 9.49147 1.55392 9.76114 1.32277 10.1089C1.09162 10.4566 0.967954 10.8667 0.967954 11.2868C0.967954 11.7069 1.09162 12.117 1.32277 12.4647C1.55392 12.8124 1.88183 13.0821 2.26668 13.2417L6.47645 14.9447L8.52129 20.6542C8.56115 20.7747 8.63039 20.8817 8.72203 20.965C8.81367 21.0483 8.92427 21.105 9.04379 21.1298C9.16331 21.1546 9.28786 21.1467 9.40375 21.1068C9.51964 21.0669 9.62297 20.9964 9.70507 20.9017L12.4267 17.8017L16.9567 21.4737C17.3058 21.7646 17.7453 21.9279 18.2001 21.9358C18.6548 21.9437 19.0997 21.7957 19.4584 21.517C19.817 21.2384 20.0694 20.8447 20.1757 20.4005C20.282 19.9563 20.2362 19.4897 20.0457 19.0747L22.8947 3.41981C22.9861 3.06502 22.9767 2.69284 22.8674 2.34296C22.7582 1.99309 22.5536 1.68059 22.2747 1.44073L22.2647 2.42778ZM18.1667 21.0177C17.9943 21.0185 17.8258 20.9644 17.6867 20.8637L12.6567 16.7857L10.9867 18.7157L11.5867 14.9357L18.9067 8.05173L8.86672 13.6037L4.36672 11.7777L22.2867 4.54973L18.1667 21.0177Z" fill="white"/>
-                    </svg>
-                    Написать в Telegram
-                </a>
-                <p style="margin-top: 20px; opacity: 0.8;">@alexgolang</p>
-            </div>
-        </section>
-    </div>
+            <h2>Начать обучение</h2>
+            <p>Готовы начать свой путь к успешной карьере в IT?</p>
+            <a href="https://t.me/alexgolang" class="contact-button" target="_blank" rel="noopener">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.2647 2.42778C21.98 2.19091 21.6364 2.03567 21.2704 1.97858C20.9045 1.92149 20.5299 1.96469 20.1867 2.10406L2.26668 9.33184C1.88183 9.49147 1.55392 9.76114 1.32277 10.1089C1.09162 10.4566 0.967954 10.8667 0.967954 11.2868C0.967954 11.7069 1.09162 12.117 1.32277 12.4647C1.55392 12.8124 1.88183 13.0821 2.26668 13.2417L6.47645 14.9447L8.52129 20.6542C8.56115 20.7747 8.63039 20.8817 8.72203 20.965C8.81367 21.0483 8.92427 21.105 9.04379 21.1298C9.16331 21.1546 9.28786 21.1467 9.40375 21.1068C9.51964 21.0669 9.62297 20.9964 9.70507 20.9017L12.4267 17.8017L16.9567 21.4737C17.3058 21.7646 17.7453 21.9279 18.2001 21.9358C18.6548 21.9437 19.0997 21.7957 19.4584 21.517C19.817 21.2384 20.0694 20.8447 20.1757 20.4005C20.282 19.9563 20.2362 19.4897 20.0457 19.0747L22.8947 3.41981C22.9861 3.06502 22.9767 2.69284 22.8674 2.34296C22.7582 1.99309 22.5536 1.68059 22.2747 1.44073L22.2647 2.42778ZM18.1667 21.0177C17.9943 21.0185 17.8258 20.9644 17.6867 20.8637L12.6567 16.7857L10.9867 18.7157L11.5867 14.9357L18.9067 8.05173L8.86672 13.6037L4.36672 11.7777L22.2867 4.54973L18.1667 21.0177Z" fill="white"/>
+                </svg>
+                Написать в Telegram
+            </a>
+            <p style="margin-top: 20px; opacity: 0.8;">@alexgolang</p>
+        </div>
+    </footer>
 </body>
 </html>
