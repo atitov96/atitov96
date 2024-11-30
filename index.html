@@ -483,15 +483,57 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/99090271" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-    <!-- Google Analytics -->
+    </script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-XXXXX-Y', 'auto');
-      ga('send', 'pageview');
+        const YM_ID = 99090271;
+
+        document.querySelectorAll('.contact-button, .cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                ym(YM_ID, 'reachGoal', 'contact_click');
+            });
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    ym(YM_ID, 'reachGoal', `view_${entry.target.id}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        let hasReachedBottom = false;
+        window.addEventListener('scroll', () => {
+            if (!hasReachedBottom && 
+                window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+                ym(YM_ID, 'reachGoal', 'scroll_to_bottom');
+                hasReachedBottom = true;
+            }
+        });
+        
+        setTimeout(() => {
+            ym(YM_ID, 'reachGoal', 'time_on_site_1min');
+        }, 60_000);
+        
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                ym(YM_ID, 'reachGoal', 'form_submit');
+            });
+        });
+
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function() {
+                ym(YM_ID, 'reachGoal', 'external_link', {url: this.href});
+            });
+        });
+
+        document.addEventListener('copy', function() {
+            ym(YM_ID, 'reachGoal', 'copy_content');
+        });
     </script>
 </head>
 <body>
@@ -694,46 +736,5 @@
             <p style="margin-top: 20px; opacity: 0.8;">@alexgolang</p>
         </div>
     </footer>
-    <script>
-        const YM_ID = '99090271';
-
-        document.querySelectorAll('.contact-button, .cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                ym(YM_ID, 'reachGoal', 'contact_click');
-            });
-        });
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    ym(YM_ID, 'reachGoal', `view_${entry.target.id}`);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-        
-        let hasReachedBottom = false;
-        window.addEventListener('scroll', () => {
-            if (!hasReachedBottom && 
-                window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
-                ym(YM_ID, 'reachGoal', 'scroll_to_bottom');
-                hasReachedBottom = true;
-            }
-        });
-        
-        setTimeout(() => {
-            ym(YM_ID, 'reachGoal', 'time_on_site_1min');
-        }, 60_000);
-        
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                ym(YM_ID, 'reachGoal', 'form_submit');
-            });
-        });
-    </script>
 </body>
 </html>
