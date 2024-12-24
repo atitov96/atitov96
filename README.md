@@ -60,6 +60,8 @@ var expertise = map[string][]string{
 
 ## 🏆 Достижения
 
+![Trophy](https://github-profile-trophy.vercel.app/?username=atitov96&theme=darkhub)
+
 Ментор в EPAM Systems (2019-2020)
 
 Увеличение тестового покрытия проектов на 10%
@@ -69,6 +71,10 @@ var expertise = map[string][]string{
 Разработка системы управления грантами для университета в Бостоне
 
 ## 💡 Экспертиза
+
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 Backend-разработка на Go и Python
 
@@ -94,9 +100,17 @@ Backend-разработка на Go и Python
 
 📱 Telegram: @alexgolang
 
-## 📈 GitHub Статистика
+## 📊 GitHub Статистика
 
-<img src="https://github-readme-stats.vercel.app/api?username=atitov96&show_icons=true&theme=dark" alt="GitHub Stats">
+![Profile Views](https://komarev.com/ghpvc/?username=atitov96)
+
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=atitov96&show_icons=true&theme=dark"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=atitov96&layout=compact&theme=dark"/>
+</div>
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=atitov96&theme=dark"/>
+</div>
 
 ## 🌟 Последние проекты
 
