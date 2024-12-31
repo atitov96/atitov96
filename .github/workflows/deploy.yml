@@ -12,9 +12,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          node-version: '22'
+
+      - name: Build Roadmap App
+        run: |
+          cd roadmap
+          npm install
+          mkdir -p ../dist/roadmap
+          npm run build
+          cp -r out/* ../dist/roadmap/
+          touch ../dist/roadmap/.nojekyll
+          touch ../dist/.nojekyll
+          echo "alex-go.ru" > ../dist/CNAME
+
+      - name: Copy Main Site
+        run: |
+          cp -r index.html metrics.js dist/
+          touch dist/roadmap/.nojekyll
+          echo "alex-go.ru" > dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
           cname: alex-go.ru
+          clean: true
