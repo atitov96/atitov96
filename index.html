@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Алекс Гоу - Senior Go/Python разработчик и технический ментор. Помогаю с backend разработкой, автоматизацией тестирования и подготовкой к техническим собеседованиям.">
+    <meta name="keywords" content="Go developer, Python developer, backend, микросервисы, менторство, технические собеседования, AQA">
+    <meta name="author" content="Alex Go">
+    <meta property="og:title" content="Алекс Гоу | Senior Go/Python Developer & Technical Mentor">
+    <meta property="og:description" content="Профессиональное менторство в Go и Python разработке. Индивидуальный подход к обучению и развитию в IT.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atitov96.github.io/atitov96/">
+    <title>Алекс Гоу | Senior Go/Python Developer & Technical Mentor</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --bg-dark: #0f172a;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: var(--bg-dark);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            width: auto;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button:active, 
+        .contact-button:active {
+            transform: translateY(1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-content {
+            margin-bottom: 60px;
+        }
+
+        .section {
+            background: white;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        h2 {
+            color: var(--bg-dark);
+            font-size: 2em;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin: 20px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .expertise-item {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .expertise-item h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-section {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: var(--bg-dark);
+            color: white;
+            padding: 80px 0;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            width: auto;
+            cursor: pointer;
+        }
+
+        .contact-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-button svg {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 30px 0;
+            background: #f8fafc;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 60px 20px;
+            }
+
+            .contact-button {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        .testimonials {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin: 1rem 0;
+            color: #333;
+        }
+        
+        .testimonial-card cite {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Кейсы */
+        .case-studies {
+            padding: 4rem 0;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #0066cc;
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .case-card h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+        
+        .case-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .case-card li {
+            padding: 0.5rem 0;
+            color: #333;
+        }
+        
+        .case-card li:before {
+            content: "✓";
+            color: #0066cc;
+            margin-right: 0.5rem;
+        }
+
+        .telegram-blog {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .telegram-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .telegram-preview {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .telegram-preview img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .telegram-stats {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .telegram-description {
+            padding: 2rem;
+        }
+        
+        .telegram-description ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .telegram-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #0088cc;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .telegram-button:hover {
+            background: #006699;
+        }
+        
+        @media (max-width: 768px) {
+            .telegram-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(99090271, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer"
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/99090271" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    </script>
+    <script>
+        const YM_ID = 99090271;
+
+        document.querySelectorAll('.contact-button, .cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                ym(YM_ID, 'reachGoal', 'contact_click');
+            });
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    ym(YM_ID, 'reachGoal', `view_${entry.target.id}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        let hasReachedBottom = false;
+        window.addEventListener('scroll', () => {
+            if (!hasReachedBottom && 
+                window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+                ym(YM_ID, 'reachGoal', 'scroll_to_bottom');
+                hasReachedBottom = true;
+            }
+        });
+        
+        setTimeout(() => {
+            ym(YM_ID, 'reachGoal', 'time_on_site_1min');
+        }, 60_000);
+        
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                ym(YM_ID, 'reachGoal', 'form_submit');
+            });
+        });
+
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function() {
+                ym(YM_ID, 'reachGoal', 'external_link', {url: this.href});
+            });
+        });
+
+        document.addEventListener('copy', function() {
+            ym(YM_ID, 'reachGoal', 'copy_content');
+        });
+    </script>
+    <!-- <script src="metrics.js"></script> -->
+</head>
+<body>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Алекс Гоу - IT ментор",
+        "jobTitle": "Senior Go/Python Developer",
+        "description": "Обучение Go, Python и автоматизации тестирования",
+        "knowsAbout": ["Go", "Python", "Backend Development", "Microservices", "Software Architecture"],
+        "url": "https://atitov96.github.io/atitov96/"
+    }
+    </script>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Алекс Гоу</h1>
+            <!-- Вариант A -->
+            <!-- <h1>Стань Go/Python разработчиком с опытным ментором</h1> -->
+            <!-- Вариант B -->
+            <!-- <h1>Увеличь свой доход в IT с персональным наставником</h1> -->
+            <p>Senior Go/Python Developer & Technical Mentor</p>
+            <a href="https://t.me/alexgolang" class="cta-button" target="_blank" rel="noopener">
+                <!-- Вариант A -->
+                <!-- Записаться на консультацию -->
+                <!-- Вариант B -->
+                Получить персональный план развития
+            </a>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <section id="about" class="section">
+                <h2>О себе</h2>
+                <p>Senior разработчик с глубоким пониманием высоконагруженных систем и микросервисной архитектуры. Специализируюсь на:</p>
+                <div class="feature-card">
+                    <ul class="feature-list">
+                        <li>Backend-разработке на Go и Python</li>
+                        <li>Автоматизации тестирования (Python AQA)</li>
+                        <li>Проектировании высоконагруженных микросервисов</li>
+                        <li>Менторстве и подготовке к техническим собеседованиям</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="course" class="section">
+                <h2>Индивидуальный подход</h2>
+                <div class="quote">
+                    "В IT нет универсальных решений - каждый специалист уникален и требует персонального пути развития"
+                </div>
+                <div class="feature-card">
+                    <ul class="feature-list">
+                        <li>Разработка персонального плана развития под ваши цели</li>
+                        <li>Работа с реальными проектами и актуальными технологиями</li>
+                        <li>Постоянная обратная связь и поддержка</li>
+                        <li>Фокус на практических навыках, востребованных в индустрии</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="expertise" class="section">
+                <h2>Области экспертизы</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>Go</h3>
+                        <p>Микросервисная архитектура, высокие нагрузки, конкурентное программирование</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Python</h3>
+                        <p>Backend-разработка, автоматизация тестирования (AQA), API</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Архитектура</h3>
+                        <p>Проектирование систем, масштабирование, отказоустойчивость</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>DevOps</h3>
+                        <p>CI/CD, контейнеризация, мониторинг производительности</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="formats" class="section">
+                <h2>Форматы работы</h2>
+                <div class="feature-card">
+                    <ul class="feature-list">
+                        <li><strong>Персональные консультации:</strong> Разбор конкретных вопросов и проблем</li>
+                        <li><strong>Код-ревью:</strong> Анализ проектов и рекомендации по улучшению</li>
+                        <li><strong>Менторство:</strong> Долгосрочное сопровождение с постановкой целей</li>
+                        <li><strong>Мок-интервью:</strong> Подготовка к техническим собеседованиям</li>
+                    </ul>
+                </div>
+            </section>
+
+        <!-- <section id="blog" class="blog-section">
+              <h2>Блог</h2>
+              <div class="blog-grid">
+                <article class="blog-card">
+                  <h3>Микросервисы на Go: практический опыт</h3>
+                  <p>Разбор реального проекта: архитектура, проблемы, решения...</p>
+                  <a href="/blog/microservices-go">Читать далее</a>
+                </article>
+                
+                <article class="blog-card">
+                  <h3>Автоматизация тестирования на Python</h3>
+                  <p>Построение эффективного фреймворка для тестирования...</p>
+                  <a href="/blog/python-testing">Читать далее</a>
+                </article>
+              </div>
+            </section> -->
+        <!-- <section id="testimonials" class="testimonials">
+              <h2>Отзывы студентов</h2>
+              <div class="testimonials-slider">
+                <div class="testimonial-card">
+                  <img src="avatar1.jpg" alt="Михаил К.">
+                  <blockquote>
+                    "За 6 месяцев менторства прошёл путь от джуна до мидла в Go. Очень структурированная программа и постоянная поддержка."
+                  </blockquote>
+                  <cite>Михаил К., Go Developer в Яндекс</cite>
+                </div>
+                
+                <div class="testimonial-card">
+                  <img src="avatar2.jpg" alt="Анна С.">
+                  <blockquote>
+                    "Благодаря Алексу успешно прошла собеседование в крупную компанию. Особенно помогли мок-интервью и разбор алгоритмических задач."
+                  </blockquote>
+                  <cite>Анна С., Python Developer в Озон</cite>
+                </div>
+              </div>
+            </section> -->
+
+        <!-- <section id="case-studies" class="case-studies">
+              <h2>Успешные кейсы</h2>
+              <div class="case-grid">
+                <div class="case-card">
+                  <h3>Переход с PHP на Go</h3>
+                  <ul>
+                    <li>Начальный уровень: PHP Middle Developer</li>
+                    <li>Длительность обучения: 4 месяца</li>
+                    <li>Результат: Go Developer в финтех-стартапе</li>
+                    <li>Рост зарплаты: +80%</li>
+                  </ul>
+                </div>
+                
+                <div class="case-card">
+                  <h3>С нуля до автоматизации тестирования</h3>
+                  <ul>
+                    <li>Начальный уровень: Ручной QA</li>
+                    <li>Длительность обучения: 6 месяцев</li>
+                    <li>Результат: AQA Engineer в продуктовой компании</li>
+                    <li>Рост зарплаты: +65%</li>
+                  </ul>
+                </div>
+              </div>
+            </section> -->
+
+        <!-- <section id="telegram-blog" class="telegram-blog">
+                <div class="container">
+                    <h2>Мой Telegram канал</h2>
+                    <div class="telegram-content">
+                        <div class="telegram-preview">
+                            <img src="/images/telegram-preview.jpg" alt="Telegram канал">
+                            <div class="telegram-stats">
+                                <span>1200+ подписчиков</span>
+                                <span>•</span>
+                                <span>3 поста в неделю</span>
+                            </div>
+                        </div>
+                        <div class="telegram-description">
+                            <h3>О чем пишу:</h3>
+                            <ul>
+                                <li>Разборы интересных задач на Go и Python</li>
+                                <li>Архитектурные решения из реальных проектов</li>
+                                <li>Подготовка к собеседованиям</li>
+                                <li>Новости и тренды в backend-разработке</li>
+                            </ul>
+                            <a href="https://t.me/your_channel" class="telegram-button" target="_blank">
+                                <svg>/* Иконка Telegram */</svg>
+                                Подписаться на канал
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </div>
+    </main>
+
+    <footer id="contacts" class="contact-section">
+            <div class="contact-container">
+            <h2>Начать обучение</h2>
+            <p>Готовы начать свой путь к успешной карьере в IT?</p>
+            <a href="https://t.me/alexgolang" class="contact-button" target="_blank" rel="noopener">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.2647 2.42778C21.98 2.19091 21.6364 2.03567 21.2704 1.97858C20.9045 1.92149 20.5299 1.96469 20.1867 2.10406L2.26668 9.33184C1.88183 9.49147 1.55392 9.76114 1.32277 10.1089C1.09162 10.4566 0.967954 10.8667 0.967954 11.2868C0.967954 11.7069 1.09162 12.117 1.32277 12.4647C1.55392 12.8124 1.88183 13.0821 2.26668 13.2417L6.47645 14.9447L8.52129 20.6542C8.56115 20.7747 8.63039 20.8817 8.72203 20.965C8.81367 21.0483 8.92427 21.105 9.04379 21.1298C9.16331 21.1546 9.28786 21.1467 9.40375 21.1068C9.51964 21.0669 9.62297 20.9964 9.70507 20.9017L12.4267 17.8017L16.9567 21.4737C17.3058 21.7646 17.7453 21.9279 18.2001 21.9358C18.6548 21.9437 19.0997 21.7957 19.4584 21.517C19.817 21.2384 20.0694 20.8447 20.1757 20.4005C20.282 19.9563 20.2362 19.4897 20.0457 19.0747L22.8947 3.41981C22.9861 3.06502 22.9767 2.69284 22.8674 2.34296C22.7582 1.99309 22.5536 1.68059 22.2747 1.44073L22.2647 2.42778ZM18.1667 21.0177C17.9943 21.0185 17.8258 20.9644 17.6867 20.8637L12.6567 16.7857L10.9867 18.7157L11.5867 14.9357L18.9067 8.05173L8.86672 13.6037L4.36672 11.7777L22.2867 4.54973L18.1667 21.0177Z" fill="white"/>
+                </svg>
+                Написать в Telegram
+            </a>
+            <p style="margin-top: 20px; opacity: 0.8;">@alexgolang</p>
+        </div>
+    </footer>
+</body>
+</html>
