@@ -1,8 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
-import { CheckCircle2, Circle, Clock, XCircle, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect } from "react";
+import {
+  CheckCircle2,
+  Circle,
+  Clock,
+  XCircle,
+  ChevronDown,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-type Status = 'done' | 'in-progress' | 'skip' | undefined;
+type Status = "done" | "in-progress" | "skip" | undefined;
 
 interface StatusButtonProps {
   status?: Status;
@@ -12,45 +18,48 @@ interface StatusButtonProps {
 const statusConfig = {
   done: {
     icon: CheckCircle2,
-    color: 'text-green-500',
-    bg: 'bg-green-100',
-    label: 'Выполнено'
+    color: "text-green-500",
+    bg: "bg-green-100",
+    label: "Выполнено",
   },
-  'in-progress': {
+  "in-progress": {
     icon: Clock,
-    color: 'text-yellow-500',
-    bg: 'bg-yellow-100',
-    label: 'В процессе'
+    color: "text-yellow-500",
+    bg: "bg-yellow-100",
+    label: "В процессе",
   },
   skip: {
     icon: XCircle,
-    color: 'text-gray-400',
-    bg: 'bg-gray-100',
-    label: 'Пропущено'
+    color: "text-gray-400",
+    bg: "bg-gray-100",
+    label: "Пропущено",
   },
   undefined: {
     icon: Circle,
-    color: 'text-gray-400',
-    bg: 'bg-gray-100',
-    label: 'Ожидает'
-  }
+    color: "text-gray-400",
+    bg: "bg-gray-100",
+    label: "Ожидает",
+  },
 };
 
 export function StatusButton({ status, onChange }: StatusButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
+      if (
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const currentStatus = statusConfig[status || 'undefined'];
+  const currentStatus = statusConfig[status || "undefined"];
   const Icon = currentStatus.icon;
 
   return (
@@ -84,7 +93,7 @@ export function StatusButton({ status, onChange }: StatusButtonProps) {
                     setIsOpen(false);
                   }}
                   className={`flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-50 ${
-                    status === key ? 'bg-gray-50' : ''
+                    status === key ? "bg-gray-50" : ""
                   }`}
                 >
                   <StatusIcon className={`w-5 h-5 ${config.color}`} />

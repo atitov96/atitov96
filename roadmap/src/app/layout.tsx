@@ -1,17 +1,25 @@
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
-import Script from 'next/script'
+import { Inter } from "next/font/google";
+import Script from "next/script";
 import { PageTransition } from "@/components/PageTransition";
-import Link from "next/link";
-import { Home } from "lucide-react";
+import ProductBanner from "@/components/ProductBanner";
+import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ['latin', 'cyrillic'] })
+const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  title: 'Roadmap | Alex Go',
-  description: 'Путь в IT разработку',
+  title: "Roadmap | Alex Go",
+  description: "Путь в IT разработку",
+  icons: {
+    icon: [
+      {
+        url: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">👨‍💻</text></svg>',
+        type: "image/svg+xml",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -28,20 +36,15 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <div className="bg-blue-600 text-white p-6 flex justify-between items-center">
-          <div>
-              <h1 className="text-2xl font-bold mb-2">Roadmap</h1>
-              <p className="text-sm opacity-90">Путь к становлению разработчиком</p>
-          </div>
-          <Link href="/" className="text-white hover:text-blue-200 transition-colors flex items-center gap-2">
-              <Home size={20} />
-          </Link>
-        </div>
+        <Header />
+
         <PageTransition>
-          <main className="min-h-screen bg-gray-100">
+          <main className="min-h-screen bg-gray-100 pt-14 pb-[50px]">
             {children}
           </main>
         </PageTransition>
+
+        <ProductBanner />
         <Navigation />
       </body>
     </html>

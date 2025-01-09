@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import RoadmapContent from './RoadmapContent';
+import RoadmapContent from "./RoadmapContent";
 
 interface RoadmapClientProps {
   type: string;
@@ -8,14 +8,10 @@ interface RoadmapClientProps {
   description: string;
 }
 
-export function RoadmapClient({ 
-    type,
-}: RoadmapClientProps) {
-    return (
-        <div>
-            <RoadmapContent
-                type={type}
-            />
+export function RoadmapClient({ type }: RoadmapClientProps) {
+  return (
+    <div>
+      <RoadmapContent type={type} />
     </div>
   );
 }
