@@ -13,7 +13,7 @@ const products = [
   {
     id: "basic",
     title: "Задачник прогера",
-    price: "950 ₽",
+    price: "1,900 ₽",
     description:
       "Полный набор практических задач для подготовки к собеседованиям",
     features: [
@@ -29,7 +29,7 @@ const products = [
   {
     id: "pro",
     title: "Задачник прогера PRO",
-    price: "1,950 ₽",
+    price: "4,900 ₽",
     description: "Авторские решения и детальные разборы всех задач",
     features: [
       "Детальный разбор каждой задачи",
@@ -44,7 +44,7 @@ const products = [
   {
     id: "automation",
     title: "Гуру автоматизаций",
-    price: "9,500 ₽",
+    price: "14,500 ₽",
     description: "Полный курс по созданию автоматизаций и интеграций",
     features: [
       "No-Code/Low-Code платформы",
@@ -55,6 +55,20 @@ const products = [
     ],
     link: "https://t.me/tribute/app?startapp=paUS",
     color: "bg-blue-100",
+  },
+  {
+    id: "mentor",
+    title: "Бадди-наставник",
+    price: "20,000 ₽/мес",
+    description: "Персональное менторство с опытным разработчиком",
+    features: [
+      "2 созвона 1-на-1 в неделю",
+      "Поддержка в чате",
+      "Подготовка к собеседованиям",
+      "Сопровождение на испытательном сроке",
+    ],
+    link: "https://t.me/AlexGolang",
+    color: "bg-green-100",
   },
 ];
 
