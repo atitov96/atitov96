@@ -12,7 +12,9 @@
     "serve:base": "mkdir -p temp/roadmap && cp -r out/* temp/roadmap/ && npx serve temp -p 3000"
   },
   "dependencies": {
+    "@types/dagre": "^0.7.52",
     "axios": "^1.7.9",
+    "dagre": "^0.8.5",
     "framer-motion": "^11.15.0",
     "gh-pages": "^5.0.0",
     "lucide-react": "^0.469.0",

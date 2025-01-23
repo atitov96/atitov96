@@ -26,6 +26,11 @@
             --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
+            --purple-bg: rgb(250, 245, 255);
+            --orange-bg: rgb(255, 247, 237);
+            --blue-bg: rgb(240, 249, 255);
+            --green-bg: rgb(240, 253, 244);
+            --pink-bg: rgb(253, 242, 248);
         }
 
         * {
@@ -127,7 +132,7 @@
 
         .section {
             background: white;
-            margin: 40px 0;
+            margin: 60px 0;
             padding: 40px;
             border-radius: 16px;
             box-shadow: var(--shadow-sm);
@@ -157,62 +162,131 @@
             border-radius: 2px;
         }
 
+        .service-category {
+            margin-bottom: 40px;
+        }
+
         .feature-card {
-            background: #f8fafc;
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: var(--transition);
+            padding: 24px;
+            border-radius: 16px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            margin-bottom: 24px;
+        }
+
+        .feature-card.purple {
+            background: var(--purple-bg);
+        }
+
+        .feature-card.orange {
+            background: var(--orange-bg);
+        }
+
+        .feature-card.blue {
+            background: var(--blue-bg);
+        }
+
+        .feature-card.green {
+            background: var(--green-bg);
+        }
+
+        .feature-card.pink {
+            background: var(--pink-bg);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgb(15, 23, 42);
+            margin-bottom: 8px;
+        }
+
+        .feature-card .price {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgb(37, 99, 235);
+            margin-bottom: 8px;
+        }
+
+        .feature-card .description {
+            font-size: 16px;
+            color: rgb(100, 116, 139);
+            margin-bottom: 16px;
         }
 
         .feature-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .feature-list li {
-            margin: 20px 0;
-            padding-left: 30px;
-            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            color: rgb(30, 41, 59);
+            margin-bottom: 12px;
         }
 
         .feature-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
+            content: "✓";
+            color: rgb(34, 197, 94);
+        }
+
+        .feature-card .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: rgb(37, 99, 235);
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 24px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .feature-card .cta-button:hover {
+            background: rgb(29, 78, 216);
+            text-decoration: none;
+        }
+
+        .feature-card .cta-button.primary-button {
+            background: none;
+            box-shadow: none;
         }
 
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
         }
 
         .expertise-item {
-            background: #f8fafc;
+            background: white;
             padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
+            border: 1px solid #e2e8f0;
         }
 
         .expertise-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
 
         .expertise-item h3 {
             color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            font-size: 1.5em;
+            margin-bottom: 12px;
         }
 
         .contact-section {
@@ -277,28 +351,116 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 20px;
+                padding: 40px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
             }
 
             .hero h1 {
-                font-size: 2.2em;
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 1em;
+                width: 100%;
+                max-width: 300px;
             }
 
             .section {
-                padding: 30px 20px;
+                margin: 30px 0;
+                padding: 20px;
             }
 
-            .expertise-grid {
+            .feature-card {
+                padding: 20px;
+            }
+
+            .feature-card h4 {
+                font-size: 20px;
+            }
+
+            .feature-card .price {
+                font-size: 20px;
+            }
+
+            .feature-card .description {
+                font-size: 14px;
+            }
+
+            .feature-list li {
+                font-size: 14px;
+            }
+
+            .expertise-grid,
+            .skills-grid,
+            .process-steps,
+            .case-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .expertise-item,
+            .skill-category,
+            .process-step,
+            .case-card {
+                padding: 20px;
             }
 
             .contact-section {
-                padding: 60px 20px;
+                padding: 40px 0;
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
             }
 
             .contact-button {
-                padding: 15px 30px;
-                font-size: 1.1em;
+                padding: 12px 24px;
+                font-size: 1em;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+
+            .telegram-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .main-content {
+                margin-bottom: 40px;
+            }
+
+            @media (max-width: 360px) {
+                .hero h1 {
+                    font-size: 1.8em;
+                }
+
+                .hero p {
+                    font-size: 1.1em;
+                }
+
+                .feature-card {
+                    padding: 15px;
+                }
+
+                .feature-card h4 {
+                    font-size: 18px;
+                }
+
+                .feature-card .price {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -316,69 +478,70 @@
         .section:nth-child(4) { animation-delay: 0.6s; }
 
         .testimonials {
-            padding: 4rem 0;
-            background: #f8f9fa;
+            background: var(--purple-bg);
+            padding: 60px 0;
+            margin: 60px -20px;
         }
         
         .testimonials-slider {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
         
         .testimonial-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
         }
         
         .testimonial-card img {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
         
         .testimonial-card blockquote {
+            color: var(--text-main);
             font-style: italic;
-            margin: 1rem 0;
-            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.6;
         }
         
         .testimonial-card cite {
-            color: #666;
+            color: var(--text-light);
+            font-style: normal;
+            display: block;
+            margin-top: 12px;
             font-weight: 500;
         }
         
         /* Кейсы */
-        .case-studies {
-            padding: 4rem 0;
-        }
-        
         .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
+            gap: 30px;
+            margin-top: 30px;
         }
         
         .case-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #0066cc;
-            transition: transform 0.3s ease;
+            background: var(--orange-bg);
+            padding: 24px;
+            border-radius: 16px;
+            transition: var(--transition);
         }
         
         .case-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
         }
         
         .case-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            font-size: 1.3em;
         }
         
         .case-card ul {
@@ -387,14 +550,11 @@
         }
         
         .case-card li {
-            padding: 0.5rem 0;
-            color: #333;
-        }
-        
-        .case-card li:before {
-            content: "✓";
-            color: #0066cc;
-            margin-right: 0.5rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .telegram-blog {
@@ -463,6 +623,117 @@
             .telegram-content {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Блог */
+        .blog-section {
+            margin: 60px 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-card h3 {
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        .blog-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .blog-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Улучшения для существующих секций */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .skill-category p {
+            font-size: 1.1em;
+            color: var(--text-light);
+        }
+
+        /* Обновляем процесс работы */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            left: 24px;
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            color: var(--text-main);
+            font-size: 1.3em;
+            margin: 12px 0 20px;
         }
     </style>
     <!-- Yandex.Metrika counter -->
@@ -553,15 +824,8 @@
     <div class="hero">
         <div class="container">
             <h1>Алекс Гоу</h1>
-            <!-- Вариант A -->
-            <!-- <h1>Стань Go/Python разработчиком с опытным ментором</h1> -->
-            <!-- Вариант B -->
-            <!-- <h1>Увеличь свой доход в IT с персональным наставником</h1> -->
-            <p>Senior Go/Python Developer & Technical Mentor</p>
+            <p>Помогаю разработчикам расти от новичка до профессионала</p>
             <a href="https://t.me/alexgolang" class="cta-button" target="_blank" rel="noopener">
-                <!-- Вариант A -->
-                <!-- Записаться на консультацию -->
-                <!-- Вариант B -->
                 Получить персональный план развития
             </a>
         </div>
@@ -569,172 +833,214 @@
 
     <main class="main-content">
         <div class="container">
-            <section id="about" class="section">
-                <h2>О себе</h2>
-                <p>Senior разработчик с глубоким пониманием высоконагруженных систем и микросервисной архитектуры. Специализируюсь на:</p>
-                <div class="feature-card">
-                    <ul class="feature-list">
-                        <li>Backend-разработке на Go и Python</li>
-                        <li>Автоматизации тестирования (Python AQA)</li>
-                        <li>Проектировании высоконагруженных микросервисов</li>
-                        <li>Менторстве и подготовке к техническим собеседованиям</li>
-                    </ul>
-                </div>
-            </section>
+            <section id="services" class="section">
+                <h2>Мои услуги</h2>
+                
+                <div class="service-category">
+                    <div class="feature-card purple">
+                        <h4>Задачник прогера</h4>
+                        <p class="price">1 900 ₽</p>
+                        <p class="description">Полный набор практических задач для подготовки к собеседованиям</p>
+                        <ul class="feature-list">
+                            <li>Go задачник</li>
+                            <li>Python практикум</li>
+                            <li>SQL упражнения</li>
+                            <li>System Design кейсы</li>
+                            <li>API дизайн задачи</li>
+                        </ul>
+                        <a href="https://t.me/tribute/app?startapp=paUP" class="cta-button" target="_blank" rel="noopener">
+                            Подробнее →
+                        </a>
+                    </div>
 
-            <section id="course" class="section">
-                <h2>Индивидуальный подход</h2>
-                <div class="quote">
-                    "В IT нет универсальных решений - каждый специалист уникален и требует персонального пути развития"
+                    <div class="feature-card orange">
+                        <h4>Задачник прогера PRO</h4>
+                        <p class="price">4 900 ₽</p>
+                        <p class="description">Авторские решения и детальные разборы всех задач</p>
+                        <ul class="feature-list">
+                            <li>Детальный разбор каждой задачи</li>
+                            <li>Альтернативные решения</li>
+                            <li>Best practices и паттерны</li>
+                            <li>Code review комментарии</li>
+                            <li>Рекомендации по оптимизации</li>
+                        </ul>
+                        <a href="https://t.me/tribute/app?startapp=paUQ" class="cta-button" target="_blank" rel="noopener">
+                            Подробнее →
+                        </a>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <ul class="feature-list">
-                        <li>Разработка персонального плана развития под ваши цели</li>
-                        <li>Работа с реальными проектами и актуальными технологиями</li>
-                        <li>Постоянная обратная связь и поддержка</li>
-                        <li>Фокус на практических навыках, востребованных в индустрии</li>
-                    </ul>
-                </div>
-            </section>
 
-            <section id="expertise" class="section">
-                <h2>Области экспертизы</h2>
-                <div class="expertise-grid">
-                    <div class="expertise-item">
-                        <h3>Go</h3>
-                        <p>Микросервисная архитектура, высокие нагрузки, конкурентное программирование</p>
+                <div class="service-category">
+                    <div class="feature-card blue">
+                        <h4>Гуру автоматизаций</h4>
+                        <p class="price">14 500 ₽</p>
+                        <p class="description">Полный курс по созданию автоматизаций и интеграций</p>
+                        <ul class="feature-list">
+                            <li>No-Code/Low-Code платформы</li>
+                            <li>Практические проекты</li>
+                            <li>AI интеграции</li>
+                            <li>Система достижений</li>
+                            <li>Техническая поддержка</li>
+                        </ul>
+                        <a href="https://t.me/tribute/app?startapp=paUS" class="cta-button" target="_blank" rel="noopener">
+                            Подробнее →
+                        </a>
                     </div>
-                    <div class="expertise-item">
-                        <h3>Python</h3>
-                        <p>Backend-разработка, автоматизация тестирования (AQA), API</p>
+                </div>
+
+                <div class="service-category">
+                    <div class="feature-card green">
+                        <h4>Бадди-наставник</h4>
+                        <p class="price">25 000 ₽/мес</p>
+                        <p class="description">Персональное менторство с опытным разработчиком</p>
+                        <ul class="feature-list">
+                            <li>2 созвона 1-на-1 в неделю для консультаций</li>
+                            <li>Поддержка в чате для разбора рабочих задач</li>
+                            <li>Подготовка к собеседованиям</li>
+                            <li>Сопровождение на испытательном сроке</li>
+                        </ul>
+                        <a href="https://t.me/AlexGolang" class="cta-button" target="_blank" rel="noopener">
+                            Подробнее →
+                        </a>
                     </div>
-                    <div class="expertise-item">
-                        <h3>Архитектура</h3>
-                        <p>Проектирование систем, масштабирование, отказоустойчивость</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h3>DevOps</h3>
-                        <p>CI/CD, контейнеризация, мониторинг производительности</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h3>Roadmaps</h3>
-                        <p>Интерактивные карты развития</p>
-                        <a href="/roadmap" class="cta-button roadmap-button">
-                            Открыть роадмапы
+                </div>
+
+                <div class="service-category">
+                    <div class="feature-card pink">
+                        <h4>От нуля до оффера</h4>
+                        <p class="price">50 000 ₽ предоплата + 2 месяца 50% от оффера</p>
+                        <p class="description">Полное сопровождение до трудоустройства с результатом</p>
+                        <ul class="feature-list">
+                            <li>Индивидуальная программа</li>
+                            <li>Интенсивное обучение</li>
+                            <li>Работа над проектами</li>
+                            <li>Подготовка к интервью</li>
+                            <li>Доведение до трудоустройства</li>
+                        </ul>
+                        <a href="https://t.me/AlexGolang" class="cta-button" target="_blank" rel="noopener">
+                            Подробнее →
                         </a>
                     </div>
                 </div>
             </section>
 
-            <section id="formats" class="section">
-                <h2>Форматы работы</h2>
-                <div class="feature-card">
-                    <ul class="feature-list">
-                        <li><strong>Персональные консультации:</strong> Разбор конкретных вопросов и проблем</li>
-                        <li><strong>Код-ревью:</strong> Анализ проектов и рекомендации по улучшению</li>
-                        <li><strong>Менторство:</strong> Долгосрочное сопровождение с постановкой целей</li>
-                        <li><strong>Мок-интервью:</strong> Подготовка к техническим собеседованиям</li>
-                    </ul>
+            <section id="experience" class="section">
+                <h2>Мой опыт</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>5+ лет в разработке</h3>
+                        <p>Разработка систем в продакшене</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Изменил жизнь людей к лучшему</h3>
+                        <p>Помог ученикам трудоустроиться в компании с полного нуля</p>
+                    </div>
+                    <div class="expertise-item">
+                        <h3>Блог</h3>
+                        <p>Веду технический блог и обучающие курсы</p>
+                    </div>
                 </div>
             </section>
 
-        <!-- <section id="blog" class="blog-section">
-              <h2>Блог</h2>
-              <div class="blog-grid">
-                <article class="blog-card">
-                  <h3>Микросервисы на Go: практический опыт</h3>
-                  <p>Разбор реального проекта: архитектура, проблемы, решения...</p>
-                  <a href="/blog/microservices-go">Читать далее</a>
-                </article>
-                
-                <article class="blog-card">
-                  <h3>Автоматизация тестирования на Python</h3>
-                  <p>Построение эффективного фреймворка для тестирования...</p>
-                  <a href="/blog/python-testing">Читать далее</a>
-                </article>
-              </div>
-            </section> -->
-        <!-- <section id="testimonials" class="testimonials">
-              <h2>Отзывы студентов</h2>
-              <div class="testimonials-slider">
-                <div class="testimonial-card">
-                  <img src="avatar1.jpg" alt="Михаил К.">
-                  <blockquote>
-                    "За 6 месяцев менторства прошёл путь от джуна до мидла в Go. Очень структурированная программа и постоянная поддержка."
-                  </blockquote>
-                  <cite>Михаил К., Go Developer в Яндекс</cite>
+            <section id="skills" class="section">
+                <h2>Технологии и навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <p>Go, Python, микросервисы</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Базы данных</h3>
+                        <p>PostgreSQL, MongoDB, Redis</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps</h3>
+                        <p>Docker, Kubernetes, CI/CD</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Архитектура</h3>
+                        <p>System Design, DDD, CQRS</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Автоматизация</h3>
+                        <p>Тестирование, деплой, мониторинг</p>
+                    </div>
+                    <a href="/roadmap" class="cta-button" target="_blank" rel="noopener">
+                        Открыть интерактивные роадмапы →
+                    </a>
                 </div>
-                
-                <div class="testimonial-card">
-                  <img src="avatar2.jpg" alt="Анна С.">
-                  <blockquote>
-                    "Благодаря Алексу успешно прошла собеседование в крупную компанию. Особенно помогли мок-интервью и разбор алгоритмических задач."
-                  </blockquote>
-                  <cite>Анна С., Python Developer в Озон</cite>
-                </div>
-              </div>
-            </section> -->
+            </section>
 
-        <!-- <section id="case-studies" class="case-studies">
-              <h2>Успешные кейсы</h2>
-              <div class="case-grid">
-                <div class="case-card">
-                  <h3>Переход с PHP на Go</h3>
-                  <ul>
-                    <li>Начальный уровень: PHP Middle Developer</li>
-                    <li>Длительность обучения: 4 месяца</li>
-                    <li>Результат: Go Developer в финтех-стартапе</li>
-                    <li>Рост зарплаты: +80%</li>
-                  </ul>
-                </div>
-                
-                <div class="case-card">
-                  <h3>С нуля до автоматизации тестирования</h3>
-                  <ul>
-                    <li>Начальный уровень: Ручной QA</li>
-                    <li>Длительность обучения: 6 месяцев</li>
-                    <li>Результат: AQA Engineer в продуктовой компании</li>
-                    <li>Рост зарплаты: +65%</li>
-                  </ul>
-                </div>
-              </div>
-            </section> -->
-
-        <!-- <section id="telegram-blog" class="telegram-blog">
-                <div class="container">
-                    <h2>Мой Telegram канал</h2>
-                    <div class="telegram-content">
-                        <div class="telegram-preview">
-                            <img src="/images/telegram-preview.jpg" alt="Telegram канал">
-                            <div class="telegram-stats">
-                                <span>1200+ подписчиков</span>
-                                <span>•</span>
-                                <span>3 поста в неделю</span>
-                            </div>
-                        </div>
-                        <div class="telegram-description">
-                            <h3>О чем пишу:</h3>
-                            <ul>
-                                <li>Разборы интересных задач на Go и Python</li>
-                                <li>Архитектурные решения из реальных проектов</li>
-                                <li>Подготовка к собеседованиям</li>
-                                <li>Новости и тренды в backend-разработке</li>
-                            </ul>
-                            <a href="https://t.me/your_channel" class="telegram-button" target="_blank">
-                                <svg>/* Иконка Telegram */</svg>
-                                Подписаться на канал
-                            </a>
-                        </div>
+            <section id="process" class="section">
+                <h2>Процесс работы</h2>
+                <div class="process-steps">
+                    <div class="process-step" data-step="1">
+                        <h3>Бесплатная консультация</h3>
+                        <ul class="feature-list">
+                            <li>Обсуждение ваших целей</li>
+                            <li>Оценка текущего уровня</li>
+                            <li>Составление плана развития</li>
+                        </ul>
+                    </div>
+                    <div class="process-step" data-step="2">
+                        <h3>Выбор формата</h3>
+                        <ul class="feature-list">
+                            <li>Самостоятельное обучение с материалами</li>
+                            <li>Персональное менторство</li>
+                            <li>Интенсивная подготовка к трудоустройству</li>
+                        </ul>
+                    </div>
+                    <div class="process-step" data-step="3">
+                        <h3>Регулярная поддержка</h3>
+                        <ul class="feature-list">
+                            <li>Отслеживание прогресса</li>
+                            <li>Корректировка плана при необходимости</li>
+                            <li>Помощь с решением проблем</li>
+                        </ul>
                     </div>
                 </div>
-            </section> -->
+            </section>
+
+            <section id="guarantees" class="section">
+                <h2>Гарантии</h2>
+                <ul class="feature-list">
+                    <li>Возврат средств в течение первого месяца</li>
+                    <li>Прозрачная система оплаты</li>
+                    <li>Документальное оформление</li>
+                </ul>
+            </section>
+
+            <section id="case-studies" class="section case-studies">
+                <h2>Успешные кейсы</h2>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <h3>Переход с PHP на Go</h3>
+                        <ul>
+                            <li>✦ Начальный уровень: PHP Middle Developer</li>
+                            <li>✦ Длительность обучения: 5 месяцев</li>
+                            <li>✦ Результат: Go Developer в банке</li>
+                            <li>✦ Рост зарплаты: +50%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h3>С нуля до автоматизации тестирования</h3>
+                        <ul>
+                            <li>✦ Начальный уровень: работа не в айти</li>
+                            <li>✦ Длительность обучения: 9 месяцев</li>
+                            <li>✦ Результат: AQA Engineer в продуктовой компании</li>
+                            <li>✦ Рост зарплаты: +200%</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
     <footer id="contacts" class="contact-section">
-            <div class="contact-container">
+        <div class="contact-container">
             <h2>Начать обучение</h2>
-            <p>Готовы начать свой путь к успешной карьере в IT?</p>
+            <p>Запишитесь на бесплатную консультацию</p>
             <a href="https://t.me/alexgolang" class="contact-button" target="_blank" rel="noopener">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.2647 2.42778C21.98 2.19091 21.6364 2.03567 21.2704 1.97858C20.9045 1.92149 20.5299 1.96469 20.1867 2.10406L2.26668 9.33184C1.88183 9.49147 1.55392 9.76114 1.32277 10.1089C1.09162 10.4566 0.967954 10.8667 0.967954 11.2868C0.967954 11.7069 1.09162 12.117 1.32277 12.4647C1.55392 12.8124 1.88183 13.0821 2.26668 13.2417L6.47645 14.9447L8.52129 20.6542C8.56115 20.7747 8.63039 20.8817 8.72203 20.965C8.81367 21.0483 8.92427 21.105 9.04379 21.1298C9.16331 21.1546 9.28786 21.1467 9.40375 21.1068C9.51964 21.0669 9.62297 20.9964 9.70507 20.9017L12.4267 17.8017L16.9567 21.4737C17.3058 21.7646 17.7453 21.9279 18.2001 21.9358C18.6548 21.9437 19.0997 21.7957 19.4584 21.517C19.817 21.2384 20.0694 20.8447 20.1757 20.4005C20.282 19.9563 20.2362 19.4897 20.0457 19.0747L22.8947 3.41981C22.9861 3.06502 22.9767 2.69284 22.8674 2.34296C22.7582 1.99309 22.5536 1.68059 22.2747 1.44073L22.2647 2.42778ZM18.1667 21.0177C17.9943 21.0185 17.8258 20.9644 17.6867 20.8637L12.6567 16.7857L10.9867 18.7157L11.5867 14.9357L18.9067 8.05173L8.86672 13.6037L4.36672 11.7777L22.2867 4.54973L18.1667 21.0177Z" fill="white"/>

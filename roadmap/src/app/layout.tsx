@@ -57,10 +57,10 @@ export default function RootLayout({
         />
         <noscript>
           <div>
-            <img 
-              src="https://mc.yandex.ru/watch/99090271" 
-              style={{ position: 'absolute', left: '-9999px' }} 
-              alt="" 
+            <img
+              src="https://mc.yandex.ru/watch/99090271"
+              style={{ position: "absolute", left: "-9999px" }}
+              alt=""
             />
           </div>
         </noscript>
