@@ -30,7 +30,7 @@ jobs:
 
       - name: Copy Main Site
         run: |
-          cp -r index.html metrics.js dist/
+          cp -r index.html metrics.js offer dist/
           touch dist/roadmap/.nojekyll
           echo "alex-go.ru" > dist/CNAME
 
