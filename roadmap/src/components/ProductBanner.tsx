@@ -12,78 +12,49 @@ import { analytics } from "@/utils/analytics";
 const products = [
   {
     id: "basic",
-    title: "Задачник прогера",
-    price: "1,900 ₽",
+    title: "Базовый тариф",
+    monthlyPrice: "5,000 ₽/мес",
     description:
-      "Полный набор практических задач для подготовки к собеседованиям",
+      "Доступ к учебным материалам курса",
     features: [
-      "Go задачник",
-      "Python практикум",
-      "SQL упражнения",
-      "System Design кейсы",
-      "API дизайн задачи",
+      "Базовые учебные материалы",
+      "Задачник прогера",
+      "Доступ к материалам на 5 месяцев",
+      "Доступ к базовым упражнениям",
+      "Самостоятельное обучение",
     ],
-    link: "https://t.me/tribute/app?startapp=paUP",
+    link: "https://t.me/AlexGolang",
     color: "bg-purple-100",
   },
   {
-    id: "pro",
-    title: "Задачник прогера PRO",
-    price: "4,900 ₽",
-    description: "Авторские решения и детальные разборы всех задач",
+    id: "standard",
+    title: "Стандарт",
+    monthlyPrice: "8,000 ₽/мес",
+    description: "Доступ к платформе с проверкой решений и код-ревью",
     features: [
-      "Детальный разбор каждой задачи",
-      "Альтернативные решения",
-      "Best practices и паттерны",
-      "Code review комментарии",
-      "Рекомендации по оптимизации",
+      "Все опции Базового тарифа",
+      "Задачник прогера PRO",
+      "Автоматическая и ручная проверка решений",
+      "Код-ревью проектов",
+      "Доступ к расширенным материалам",
     ],
-    link: "https://t.me/tribute/app?startapp=paUQ",
+    link: "https://t.me/AlexGolang",
     color: "bg-orange-100",
   },
   {
-    id: "automation",
-    title: "Гуру автоматизаций",
-    price: "14,500 ₽",
-    description: "Полный курс по созданию автоматизаций и интеграций",
+    id: "premium",
+    title: "Премиум",
+    monthlyPrice: "11,000 ₽/мес",
+    description: "Полный пакет с персональными консультациями и подготовкой к собеседованиям",
     features: [
-      "No-Code/Low-Code платформы",
-      "Практические проекты",
-      "AI интеграции",
-      "Система достижений",
-      "Техническая поддержка",
-    ],
-    link: "https://t.me/tribute/app?startapp=paUS",
-    color: "bg-blue-100",
-  },
-  {
-    id: "mentor",
-    title: "Бадди-наставник",
-    price: "25,000 ₽/мес",
-    description: "Персональное менторство с опытным разработчиком",
-    features: [
-      "2 созвона 1-на-1 в неделю для консультаций",
-      "Поддержка в чате для разбора рабочих задач",
-      "Подготовка к собеседованиям",
+      "Все опции Стандартного тарифа",
+      "Персональные консультации 2 раза в неделю",
+      "Подготовка к техническим собеседованиям",
+      "Автоматизация рутинных задач",
       "Сопровождение на испытательном сроке",
     ],
     link: "https://t.me/AlexGolang",
-    color: "bg-green-100",
-  },
-  {
-    id: "career",
-    title: "От нуля до оффера",
-    price: "50,000 ₽ + 2 мес 50%",
-    description: "Полное сопровождение до трудоустройства с результатом",
-    features: [
-      "Индивидуальная программа",
-      "Интенсивное обучение",
-      "Работа над проектами",
-      "Подготовка к интервью",
-      "Доведение до трудоустройства",
-    ],
-    link: "https://t.me/AlexGolang",
-    color: "bg-pink-100",
+    color: "bg-blue-100",
   },
 ];
 
@@ -246,25 +217,30 @@ export default function ProductBanner() {
                   <div
                     ref={scrollContainerRef}
                     onScroll={handleScroll}
-                    className="flex md:grid md:grid-cols-3 md:gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 md:mx-0 px-4 md:px-0 space-x-4 md:space-x-0 no-scrollbar scroll-smooth"
+                    className="flex md:grid md:grid-cols-3 md:gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 md:mx-0 px-4 md:px-0 space-x-4 md:space-x-0 no-scrollbar scroll-smooth pb-2"
                   >
                     {products.map((product) => (
                       <motion.div
                         key={product.id}
-                        className={`${product.color} rounded-lg p-4 hover:shadow-md transition-all flex-shrink-0 w-[85vw] md:w-auto snap-center`}
-                        whileHover={{ scale: 1.02 }}
+                        className={`${product.color} rounded-lg p-4 hover:shadow-md transition-all flex-shrink-0 w-[85vw] md:w-auto snap-center overflow-hidden`}
+                        whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
                       >
                         <div className="flex justify-between items-start mb-2">
                           <h3 className="font-bold text-gray-800">
                             {product.title}
                           </h3>
                           <span className="font-bold text-blue-600">
-                            {product.price}
+                            {product.monthlyPrice}
                           </span>
                         </div>
                         <p className="text-sm text-gray-600 mb-3">
                           {product.description}
                         </p>
+                        {product.monthlyPrice && (
+                          <p className="text-sm text-indigo-600 font-medium mb-3">
+                            {product.monthlyPrice}
+                          </p>
+                        )}
                         <ul className="space-y-1 mb-4">
                           {product.features.map((feature, index) => (
                             <li
