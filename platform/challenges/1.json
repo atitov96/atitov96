@@ -1,7 +1,0 @@
-{
-    "id": "1",
-    "title": "Сумма двух чисел",
-    "description": "Напишите функцию Sum, которая принимает два целых числа и возвращает их сумму.",
-    "difficulty": "easy",
-    "template": "package solution\n\nfunc Sum(a, b int) int {\n    // Ваше решение здесь\n    return 0\n}"
-}

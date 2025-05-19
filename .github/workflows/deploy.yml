@@ -17,27 +17,17 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Build Roadmap App
-        run: |
-          cd roadmap
-          npm install
-          mkdir -p ../dist/roadmap
-          npm run build
-          cp -r out/* ../dist/roadmap/
-          touch ../dist/roadmap/.nojekyll
-          touch ../dist/.nojekyll
-          echo "alex-go.ru" > ../dist/CNAME
-
       - name: Copy Main Site
         run: |
-          cp -r index.html metrics.js offer dist/
-          touch dist/roadmap/.nojekyll
-          echo "alex-go.ru" > dist/CNAME
+          mkdir -p dist
+          touch dist/.nojekyll
+          cp -r index.html metrics.js go_salary.svg offer dist/
+          echo "gobootcamp.online" > dist/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist
-          cname: alex-go.ru
+          cname: gobootcamp.online
           clean: true

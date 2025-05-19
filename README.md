@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-  <a href="https://alex-go.ru">🌐 Персональный сайт</a> •
+  <a href="https://gobootcamp.online">🌐 Персональный сайт</a> •
   <a href="https://t.me/alexgolang">💬 Telegram</a>
 </div>
 
@@ -96,7 +96,7 @@ Backend-разработка на Go и Python
 
 ## 📫 Контакты
 
-🌐 Сайт: alex-go.ru
+🌐 Сайт: gobootcamp.online
 
 📱 Telegram: @alexgolang
 

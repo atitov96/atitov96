@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Алекс Гоу - Senior Go/Python разработчик и технический ментор. Помогаю с backend разработкой, автоматизацией тестирования и подготовкой к техническим собеседованиям.">
-    <meta name="keywords" content="Go developer, Python developer, backend, микросервисы, менторство, технические собеседования, AQA">
-    <meta name="author" content="Alex Go">
-    <meta property="og:title" content="Алекс Гоу | Senior Go/Python Developer & Technical Mentor">
-    <meta property="og:description" content="Профессиональное менторство в Go и Python разработке. Индивидуальный подход к обучению и развитию в IT.">
+    <meta name="description" content="GoForge Bootcamp | Кузница по перековке в гоу - Авторский буткемп по Golang: интенсивное обучение с реальным трудоустройством">
+    <meta name="keywords" content="Go, Backend development, Microservices">
+    <meta name="author" content="Alex Golang">
+    <meta property="og:title" content="GoForge Bootcamp | Кузница по перековке в гоу">
+    <meta property="og:description" content="Авторский буткемп по Golang: интенсивное обучение с реальным трудоустройством">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://atitov96.github.io/atitov96/">
-    <title>Алекс Гоу | Senior Go/Python Developer & Technical Mentor</title>
+    <title>GoForge Bootcamp | Кузница по перековке в гоу</title>
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
     
@@ -174,23 +174,28 @@
             margin-bottom: 24px;
         }
 
-        .feature-card.purple {
+        .feature-card.purple,
+        .case-card.purple {
             background: var(--purple-bg);
         }
 
-        .feature-card.orange {
+        .feature-card.orange, 
+        .case-card.orange {
             background: var(--orange-bg);
         }
 
-        .feature-card.blue {
+        .feature-card.blue, 
+        .case-card.blue {
             background: var(--blue-bg);
         }
 
-        .feature-card.green {
+        .feature-card.green, 
+        .case-card.green {
             background: var(--green-bg);
         }
 
-        .feature-card.pink {
+        .feature-card.pink, 
+        .case-card.pink {
             background: var(--pink-bg);
         }
 
@@ -399,6 +404,7 @@
             .expertise-grid,
             .skills-grid,
             .process-steps,
+            .benefits-grid,
             .case-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -407,6 +413,7 @@
             .expertise-item,
             .skill-category,
             .process-step,
+            .benefit,
             .case-card {
                 padding: 20px;
             }
@@ -826,18 +833,18 @@
     {
         "@context": "http://schema.org",
         "@type": "ProfessionalService",
-        "name": "Алекс Гоу - IT ментор",
-        "jobTitle": "Senior Go/Python Developer",
-        "description": "Обучение Go, Python и автоматизации тестирования",
-        "knowsAbout": ["Go", "Python", "Backend Development", "Microservices", "Software Architecture"],
+        "name": "GoForge Bootcamp",
+        "jobTitle": "Кузница по перековке в гоу",
+        "description": "Авторский буткемп по Golang: интенсивное обучение с реальным трудоустройством",
+        "knowsAbout": ["Go", "Backend Development", "Microservices"],
         "url": "https://atitov96.github.io/atitov96/"
     }
     </script>
 
     <div class="hero">
         <div class="container">
-            <h1>Алекс Гоу</h1>
-            <p>Помогаю разработчикам расти от новичка до профессионала</p>
+            <h1>GoForge Bootcamp</h1>
+            <p>Кузница по перековке в Go разработчиков</p>
             <a href="https://t.me/alexgolang" class="cta-button" target="_blank" rel="noopener">
                 Получить персональный план развития
             </a>
@@ -846,6 +853,123 @@
 
     <main class="main-content">
         <div class="container">
+            <section id="mission" class="section">
+                <h2>Превратите амбиции в реальность с Go</h2>
+                <p style="margin-bottom: 20px;">Забудьте о долгих годах самообучения. С нами вы пройдёте путь от новичка до востребованного Golang-разработчика, освоите реальные навыки и получите работу мечты!</h4>
+
+                <ul class="feature-list">
+                    <li>Интенсивное погружение: максимум практики, минимум воды</li>
+                    <li>Четкая дорожная карта: от первых строк до оффера</li>
+                    <li>Востребованный Golang: язык, который ценят топовые компании</li>
+                    <li>Реальное трудоустройство — наша главная цель</li>
+                </ul>
+            </section>
+        
+            <section id="benefits" class="section">
+                <h2>Что получишь?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card purple">
+                        <h4>Персональный план</h4>
+                        <p class="description">Создаем индивидуальный план обучения под ваши цели</p>
+                        <ul class="feature-list">
+                            <li>Диагностика текущего уровня</li>
+                            <li>Постановка целей</li>
+                            <li>Рекомендации по развитию</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card blue">
+                        <h4>Практика с наставником</h4>
+                        <p class="description">Регулярные код-ревью и разбор сложных моментов</p>
+                        <ul class="feature-list">
+                            <li>Обратная связь по коду</li>
+                            <li>Советы по оптимизации</li>
+                            <li>Разбор ошибок</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card green">
+                        <h4>Карьерная поддержка</h4>
+                        <p class="description">Подготовка к собеседованиям и составление резюме</p>
+                        <ul class="feature-list">
+                            <li>Технические интервью</li>
+                            <li>Behavioral вопросы</li>
+                            <li>Переговоры о зарплате</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stages" class="section">
+                <h2>Структура обучения</h2>
+                <div class="process-steps">
+                    <div class="process-step" data-step="1">
+                        <h3>Подготовительный этап (1&ndash;3 месяца)</h3>
+                        <p>Идеально для тех, кто начинает с нуля или хочет освежить знания перед буткемпом. Успешное окончание подготовительного курса - ключ к поступлению на основной буткемп.</p>
+                    </div>
+                    <div class="process-step" data-step="2">
+                        <h3>Основной буткемп (3&ndash;4 месяца)</h3>
+                        <p>Практика, практика и еще раз практика! Работа над реальными проектами, имитирующими рабочие задачи. Менторская поддержка. Подготовка к собеседованиям.</p>
+                    </div>
+                    <div class="process-step" data-step="3">
+                        <h3>Сопровождение (1 год)</h3>
+                        <p>Даже после трудоустройства мы остаемся на связи, готовые поддержать и ответить на вопросы.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stats" class="section">
+                <h2>Golang в цифрах</h2>
+                <object type="image/svg+xml" data="go_salary.svg" style="width:100%;height:auto;">Зарплаты Go-разработчиков</object>
+            </section>
+
+            <section id="benefits" class="section">
+                <h2>Почему GoForge Bootcamp?</h2>
+                <div class="benefits-grid case-grid">
+                    <div class="benefit case-card purple">
+                        <b>Мощная трансформация</b><br>История каждого участника — путь к новой жизни и профессии. Мы меняем не только навыки, но и мышление.
+                    </div>
+                    <div class="benefit case-card blue">
+                        <b>Экспертность наставников</b><br>Обучение ведут опытные практики с реальным опытом в крупных проектах, знающие рынок и требования работодателей.
+                    </div>
+                    <div class="benefit case-card green">
+                        <b>Живое комьюнити</b><br>Ты не один: поддержка, обмен опытом, совместный рост. Сообщество, которое помогает и вдохновляет.
+                    </div>
+                    <div class="benefit case-card orange">
+                        <b>Настоящие задачи</b><br>Учимся не по книжкам, а решая реальные кейсы бизнеса. Работа над проектами, которые можно показать работодателю.
+                    </div>
+                    <div class="benefit case-card pink">
+                        <b>Трудоустройство</b><br>Наша цель — твой первый оффер за полгода! Мы не бросаем после курса и помогаем найти работу.
+                    </div>
+                    <div class="benefit case-card purple">
+                        <b>Уникальный формат</b><br>За рубежом буткемпы по Go уже доказали эффективность, в России мы первые предлагаем такой формат для Golang.
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section id="case-studies" class="section case-studies">
+                <h2>Успешные кейсы</h2>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <h3>Переход с PHP на Go</h3>
+                        <ul>
+                            <li>✦ Начальный уровень: PHP Middle Developer</li>
+                            <li>✦ Длительность обучения: 5 месяцев</li>
+                            <li>✦ Результат: Go Developer в банке</li>
+                            <li>✦ Рост зарплаты: +50%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-card">
+                        <h3>С нуля до автоматизации тестирования</h3>
+                        <ul>
+                            <li>✦ Начальный уровень: работа не в айти</li>
+                            <li>✦ Длительность обучения: 9 месяцев</li>
+                            <li>✦ Результат: AQA Engineer в продуктовой компании</li>
+                            <li>✦ Рост зарплаты: +200%</li>
+                        </ul>
+                    </div>
+                </div>
+            </section> -->
+
             <section id="services" class="section">
                 <h2>Тарифные планы</h2>
                 
@@ -898,117 +1022,6 @@
                     </div>
                 </div>
             </section>
-
-            <section id="experience" class="section">
-                <h2>Мой опыт</h2>
-                <div class="expertise-grid">
-                    <div class="expertise-item">
-                        <h3>5+ лет в разработке</h3>
-                        <p>Разработка систем в продакшене</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h3>Изменил жизнь людей к лучшему</h3>
-                        <p>Помог ученикам трудоустроиться в компании с полного нуля</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h3>Блог</h3>
-                        <p>Веду технический блог и обучающие курсы</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills" class="section">
-                <h2>Технологии и навыки</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <p>Go, Python, микросервисы</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Базы данных</h3>
-                        <p>PostgreSQL, MongoDB, Redis</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>DevOps</h3>
-                        <p>Docker, Kubernetes, CI/CD</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Архитектура</h3>
-                        <p>System Design, DDD, CQRS</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Автоматизация</h3>
-                        <p>Тестирование, деплой, мониторинг</p>
-                    </div>
-                    <a href="/roadmap/golang" class="cta-button" target="_blank" rel="noopener">
-                        Открыть интерактивные роадмапы →
-                    </a>
-                </div>
-            </section>
-
-            <section id="process" class="section">
-                <h2>Процесс работы</h2>
-                <div class="process-steps">
-                    <div class="process-step" data-step="1">
-                        <h3>Бесплатная консультация</h3>
-                        <ul class="feature-list">
-                            <li>Обсуждение ваших целей</li>
-                            <li>Оценка текущего уровня</li>
-                            <li>Составление плана развития</li>
-                        </ul>
-                    </div>
-                    <div class="process-step" data-step="2">
-                        <h3>Выбор формата</h3>
-                        <ul class="feature-list">
-                            <li>Самостоятельное обучение с материалами</li>
-                            <li>Персональное менторство</li>
-                            <li>Интенсивная подготовка к трудоустройству</li>
-                        </ul>
-                    </div>
-                    <div class="process-step" data-step="3">
-                        <h3>Регулярная поддержка</h3>
-                        <ul class="feature-list">
-                            <li>Отслеживание прогресса</li>
-                            <li>Корректировка плана при необходимости</li>
-                            <li>Помощь с решением проблем</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="guarantees" class="section">
-                <h2>Гарантии</h2>
-                <ul class="feature-list">
-                    <li>Возврат средств в течение первого месяца</li>
-                    <li>Прозрачная система оплаты</li>
-                    <li>Документальное оформление</li>
-                </ul>
-            </section>
-
-            <section id="case-studies" class="section case-studies">
-                <h2>Успешные кейсы</h2>
-                <div class="case-grid">
-                    <div class="case-card">
-                        <h3>Переход с PHP на Go</h3>
-                        <ul>
-                            <li>✦ Начальный уровень: PHP Middle Developer</li>
-                            <li>✦ Длительность обучения: 5 месяцев</li>
-                            <li>✦ Результат: Go Developer в банке</li>
-                            <li>✦ Рост зарплаты: +50%</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="case-card">
-                        <h3>С нуля до автоматизации тестирования</h3>
-                        <ul>
-                            <li>✦ Начальный уровень: работа не в айти</li>
-                            <li>✦ Длительность обучения: 9 месяцев</li>
-                            <li>✦ Результат: AQA Engineer в продуктовой компании</li>
-                            <li>✦ Рост зарплаты: +200%</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 
@@ -1023,9 +1036,9 @@
                 Написать в Telegram
             </a>
             <p style="margin-top: 20px; opacity: 0.8;">@alexgolang</p>
-            <div class="legal-links" style="margin-top: 30px; font-size: 0.9em; opacity: 0.7;">
+            <!-- <div class="legal-links" style="margin-top: 30px; font-size: 0.9em; opacity: 0.7;">
                 <a href="/offer" style="color: white; text-decoration: underline; margin: 0 10px;">Публичная оферта</a>
-            </div>
+            </div> -->
         </div>
     </footer>
 </body>
